@@ -1,0 +1,13 @@
+\begin{exercise}\label{ex:020802}
+    The programming language C does not have a boolean type. Show how a C 
+    compiler might translate an if-statement into three-address code.
+\end{exercise}
+\begin{solution}\label{sol:020802}
+    Suppose that the if-statment is of the form $\texttt{if ( } expr 
+    \texttt{ ) } stmt;$. The equivalent three-address code would be as follows.
+    \begin{listing}
+        \inputminted[linenos=true, frame=single, breaklines=true]{java}{02/08/02/ex020802.java}
+        \caption{Three-address code for if-statments in C.}
+        \label{code:020802}
+    \end{listing}
+\end{solution}

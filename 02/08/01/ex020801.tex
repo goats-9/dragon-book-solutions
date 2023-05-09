@@ -1,0 +1,25 @@
+\begin{exercise}\label{ex:020801}
+    For-statements in C and Java have the form:
+    \begin{align*}
+        \texttt{for ( } expr_1\ ;\ expr_2\ ;\ expr_3 \texttt{ ) } stmt
+    \end{align*}
+    The first expression is executed before the loop; it is typically used for 
+    initializing the loop index. The second expression is a test made before 
+    each iteration of the loop; the loop is exited if the expression becomes 0. 
+    The loop itself can be thought of as the statement 
+    \texttt{\{ }$stmt\ expr_3;$\texttt{ \}}. The third expression is executed at 
+    the end of each iteration; it is typically used to increment the loop index. 
+    The meaning of the for-statement is similar to
+    \begin{align*}
+        expr_1; \texttt{ while ( } expr_2 \texttt{ ) \{ }stmt\ expr_3; \texttt{ \}}
+    \end{align*}
+    Define a class $For$ for for-statements, similar to class $If$ in Fig. 2.43.
+\end{exercise}
+\begin{solution}\label{sol:020801}
+    The class is shown in \cref{code:020801}.
+    \begin{listing}[!ht]
+        \inputminted[linenos=true, frame=single, breaklines=true]{java}{02/08/01/ex020801.java}
+        \caption{Implementation of the $For$ class in Java.}
+        \label{code:020801}
+    \end{listing}
+\end{solution}
