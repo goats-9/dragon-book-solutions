@@ -1,0 +1,24 @@
+\begin{exercise}\label{ex:010602}
+    Repeat \cref{ex:010601} for the code of \cref{code:010602}.
+    \begin{listing}[!ht]
+    \inputminted[linenos=true,frame=single]{c}{01/06/02/ex010602.c}
+    \caption{Source code for \cref{ex:010602}}
+    \label{code:010602}
+    \end{listing}
+\end{exercise}
+\begin{solution}\label{sol:010602}
+    Inside block 1, a new local variable \texttt{i} is initialized 
+    with the value 5, and the value of \texttt{j} in the global scope is changed 
+    to 4. Thus, the value of \texttt{w} is 9.
+
+    \noindent In block 2, there are no changes to the values of the global 
+    variables \texttt{i} and \texttt{j}. Therefore, the value of \texttt{x} is 7.
+
+    \noindent In block 3, a new local variable \texttt{j} is initialized
+    with the value 6, and the value of \texttt{i} is changed to 7 in its global 
+    scope. Thus, the value of \texttt{y} is 13.
+
+    \noindent In block 4, the value of \texttt{i} is now 7 from block 3, and the 
+    value of \texttt{j} is unchanged in its global scope. Thus, the value of 
+    \texttt{z} is 11. 
+\end{solution}
