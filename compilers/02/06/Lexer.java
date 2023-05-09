@@ -93,7 +93,7 @@ public class Lexer {
         if ( peek == '!' || peek == '=' ) {
             StringBuffer b = new StringBuffer();
             b.append(peek);
-            peek = (char) System.in.read();
+            peek = (char)System.in.read();
             if (peek == '=') {
                 b.append(peek);
                 String s = b.toString();
