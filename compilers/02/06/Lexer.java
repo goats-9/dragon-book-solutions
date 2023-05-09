@@ -26,7 +26,7 @@ public class Lexer {
                         }
                         if (peek == '\n') line = line + 1;
                     }
-                } else {
+                } else {        // Not a comment, / must be a token
                     slashCheck = true;
                     break;
                 }
@@ -34,6 +34,7 @@ public class Lexer {
             else break;
         }
         if( Character.isDigit(peek) || peek = '.' ) {
+            // Floats of the form .abc ...
             if (peek == '.') {
                 double flt = 0.0;
                 long ctr = -1;
@@ -55,10 +56,13 @@ public class Lexer {
                 peek = (char)System.in.read();
             } while( Character.isDigit(peek) );
             return new Num(v);
+            // Floats of the form v.abc ...
             if (peek == '.') {
                 double flt = v;
                 int ctr = -1;
                 peek = (char)System.in.read();
+                // Float is of the form v.
+                if (!Character.isDigit(peek)) return new Num(flt);
                 do {
                     flt = flt + Character.digit(peek, 10)*Math.pow(10, ctr--);
                     peek = (char)System.in.read();
@@ -79,6 +83,7 @@ public class Lexer {
             words.put(s, w);
             return w;
         }
+        // Relational operators <, <=, >, >=
         if ( peek == '<' || peek == '>' ) {
             StringBuffer b = new StringBuffer();
             b.append(peek);
@@ -90,6 +95,7 @@ public class Lexer {
             words.put(s, w);
             return w;
         }
+        // Relational operators !=, ==
         if ( peek == '!' || peek == '=' ) {
             StringBuffer b = new StringBuffer();
             b.append(peek);
