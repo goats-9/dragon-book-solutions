@@ -1,0 +1,28 @@
+\setcounter{section}{5}
+\section{Lexical Analysis}
+
+\begin{exercise}\label{ex:020601}
+    Extend the lexical analyzer in Section 2.6.5 to remove comments, defined as 
+    follows:
+    \begin{enumerate}[label=\alph*)]
+        \item A comment begins with \texttt{//} and includes all characters until 
+        the end of that line.
+        \item A comment begins with \texttt{/*} and includes all characters 
+        through the next occurrence of the character sequence \texttt{*/}.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{ex:020602}
+    Extend the lexical analyzer in Section 2.6.5 to recognize the relational
+    operators \texttt{<}, \texttt{<=}, \texttt{==}, \texttt{!=}, \texttt{>=},
+    \texttt{>}.
+\end{exercise}
+
+\begin{exercise}\label{ex:020603}
+    Extend the lexical analyzer in Section 2.6.5 to recognize floating point 
+    numbers such as \texttt{2.}, \texttt{3.14}, and \texttt{.5}.
+\end{exercise}
+\begin{solution}\label{sol:0206}
+    The extended lexical analyzer code can be viewed 
+    \href{https://github.com/goats-9/exercises/tree/main/compilers/02/06/Lexer.java}{here}.
+\end{solution}
