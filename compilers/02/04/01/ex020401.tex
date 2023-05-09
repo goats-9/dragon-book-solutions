@@ -1,0 +1,30 @@
+\begin{exercise}\label{ex:020401}
+    Construct recursive-descent parsers, starting with the following grammars:
+    \begin{enumerate}[label=\alph*)]
+        \item \label{cfg:020401a} $S \yld\ \texttt{+}\ S\ S\ |\ \texttt{-}\ S\ S\ |\ \texttt{a}$
+        \item \label{cfg:020401b} $S \yld\ S\ (\ S\ )\ S\ |\ \epsilon$
+        \item \label{cfg:020401c} $S \yld\ 0\ S\ 1\ |\ 0\ 1$
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:020401}
+    \begin{enumerate}[label=\alph*)]
+        \item The pseudocode is shown in \cref{code:020401a}.
+        \begin{listing}[!ht]
+            \inputminted[linenos=true, frame=single]{c}{02/04/01/ex020401a.c}
+            \caption{Pseudocode for recursive descent parser for \cref{ex:020401} \ref{cfg:020401a}.}
+            \label{code:020401a}
+        \end{listing}
+        \item The pseudocode is shown in \cref{code:020401b}.
+        \begin{listing}[!ht]
+            \inputminted[linenos=true, frame=single]{c}{02/04/01/ex020401b.c}
+            \caption{Pseudocode for recursive descent parser for \cref{ex:020401} \ref{cfg:020401b}.}
+            \label{code:020401b}
+        \end{listing}
+        \item The pseudocode is shown in \cref{code:020401c}.
+        \begin{listing}[!ht]
+            \inputminted[linenos=true, frame=single]{c}{02/04/01/ex020401c.c}
+            \caption{Pseudocode for recursive descent parser for \cref{ex:020401} \ref{cfg:020401c}.}
+            \label{code:020401c}
+        \end{listing}
+    \end{enumerate}
+\end{solution}
