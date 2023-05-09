@@ -1,0 +1,16 @@
+\begin{exercise}\label{ex:020206}
+    Construct a context-free grammar for roman numerals.
+\end{exercise}
+\begin{solution}\label{sol:020206}
+    The context free grammar is as shown.
+    \begin{align*}
+        num &\yld Th\ H\ T\ U \\
+        Th &\yld \textrm{M | MM | MMM} \\
+        H &\yld H'\ | \textrm{ D}H'\ \textrm{| CD | CM} \\
+        H' &\yld \textrm{C | CC | CCC} \\
+        T &\yld T'\ | \textrm{ L}T'\ \textrm{| XL | XC} \\
+        T' &\yld \textrm{X | XX | XXX} \\
+        U &\yld U'\ | \textrm{ V}U'\ \textrm{| IV | IX} \\
+        U' &\yld \textrm{I | II | III}
+    \end{align*}
+\end{solution}

@@ -1,0 +1,27 @@
+\begin{exercise}\label{ex:020203}
+    Which of the grammars in \cref{ex:020202} are ambiguous?
+\end{exercise}
+\begin{solution}\label{sol:020203}
+    \begin{enumerate}
+        \item This grammar is not ambiguous.
+        \item This grammar is not ambiguous.
+        \item This grammar is ambiguous. Consider the string \texttt{()()}.
+        We show two leftmost derivations for it.
+        \begin{align*}
+            S \yld S\texttt{(}S\texttt{)}S \yld \texttt{(}S\texttt{)}S \yld \texttt{()}S \yld \texttt{()}S\texttt{(}S\texttt{)}S \drv \texttt{()()} \\
+            S \yld S\texttt{(}S\texttt{)}S \yld S\texttt{(}S\texttt{)}S\texttt{(}S\texttt{)}S \drv \texttt{()()}
+        \end{align*}
+        \item This grammar is ambiguous. Consider the string \texttt{ab}.
+        We show two leftmost derivations for it.
+        \begin{align*}
+            S \yld \texttt{a}S\texttt{b}S \yld \texttt{ab}S \yld \texttt{ab}S \drv \texttt{abab} \\
+            S \yld \texttt{a}S\texttt{b}S \yld \texttt{ab}S\texttt{a}S\texttt{b}S \drv \texttt{abab}
+        \end{align*}
+        \item This grammar is ambiguous. Consider the string \texttt{a+a+a}.
+        We show two leftmost derivations for it.
+        \begin{align*}
+            S \yld S\texttt{+}S \yld S\texttt{+}S\texttt{+}S \drv \texttt{a+a+a} \\
+            S \yld S\texttt{+}S \yld \texttt{a+}S \yld \texttt{a+}S\texttt{+}S \drv \texttt{a+a+a}
+        \end{align*}
+    \end{enumerate}
+\end{solution}
