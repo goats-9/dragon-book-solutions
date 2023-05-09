@@ -50,10 +50,11 @@
         because, in any rule, whenever an \texttt{a} is added, a \texttt{b} 
         is also added.
 
-        \item This grammar generates regular expressions containing \texttt{a}
-        and the union and star operations along with parentheses. We prove this 
-        claim by definition. Clearly, $S \yld \texttt{a}$ is in this language. 
-        If any regular expressions $R$ and $T$ are in this language, then
+        \item This grammar generates regular expressions of \texttt{a}, the 
+        union and star operations and parentheses. We prove this claim by the 
+        definition of regular expressions. Clearly, $S \yld \texttt{a}$ is in 
+        this language. If any regular expressions $R$ and $T$ are in this 
+        language, then
         \begin{align*}
             S &\yld \brak{S} \drv \brak{R} \\
             S &\yld S^{\ *} \drv R^{\ *} \\

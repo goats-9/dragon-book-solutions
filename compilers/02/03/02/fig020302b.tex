@@ -1,0 +1,36 @@
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}
+        [
+            level distance = 3em, 
+            level 1/.style={sibling distance=6em},
+            level 2/.style={sibling distance=3em},
+        ]
+        \node {$E$}
+        child {
+            node {$E$}
+            child {node {print(`\texttt{9}')} edge from parent[dashed]}
+            child {node {\texttt{9}}}
+        }
+        child {node {print(`\texttt{-}')} edge from parent[dashed]}
+        child {
+            node {$E$}
+            child {
+                node {$E$}
+                child {node {print(`\texttt{5}')} edge from parent[dashed]}
+                child {node {\texttt{5}}}
+            }
+            child {node {print(`\texttt{*})'} edge from parent[dashed]}
+            child {
+                node {$E$}
+                child {node {print(`\texttt{2}')} edge from parent[dashed]}
+                child {node {\texttt{2}}}
+            }
+            child {node {\texttt{*}}}
+        }
+        child {node {\texttt{-}}}
+        ;
+    \end{tikzpicture}
+    \caption{Parse tree for the input \texttt{952*-} for \cref{ex:020302}.}
+    \label{fig:020302b}
+\end{figure}

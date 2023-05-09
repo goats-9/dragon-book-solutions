@@ -1,0 +1,31 @@
+\begin{exercise}\label{ex:020303}
+    Construct a syntax directed translation scheme that translates integers 
+    into roman numerals.
+\end{exercise}
+\begin{solution}\label{sol:020303}
+    Using the grammar from \cref{ex:020206}, the translation scheme is
+    \begin{align*}
+        num \yld\ &Th\ H\ T\ U\ \cbrak{num.rm = Th.rm\ \|\ H.rm \|\ T.rm \|\ U.rm} \\
+        Th \yld\ &low\ \cbrak{Th.rm = rep(\textrm{`M'}, low.val)} \\
+        H \yld\ &low\ \cbrak{H.rm = rep(\textrm{`C'}, low.val)} \\
+              |\ &4\ \cbrak{H.rm = \textrm{`CD'}} \\
+              |\ &high\ \cbrak{H.rm = \textrm{`D'}\ \|\ rep(\textrm{`C'}, high.val - 5)} \\
+              |\ &9\ \cbrak{H.rm = \textrm{`CM'}} \\
+        T \yld\ &low\ \cbrak{T.rm = rep(\textrm{`X'}, low.val)} \\
+              | &4\ \cbrak{T.rm = \textrm{`XL'}} \\
+              | &high\ \cbrak{T.rm = \textrm{`L'}\ \|\ rep(\textrm{`X', high.val - 5})} \\
+              | &9\ \cbrak{T.rm = \textrm{`XC'}} \\
+        U \yld\ &low\ \cbrak{U.rm = rep(\textrm{`I'}, low.val)} \\
+              | &4\ \cbrak{U.rm = \textrm{`IV'}} \\
+              | &high\ \cbrak{U.rm = \textrm{`V'}\ \|\ rep(\textrm{`I', high.val - 5})} \\
+              | &9\ \cbrak{U.rm = \textrm{`IX'}} \\
+        low \yld\ &0\ \cbrak{low.val = 0} \\
+                | &1\ \cbrak{low.val = 1} \\
+                | &2\ \cbrak{low.val = 2} \\
+                | &3\ \cbrak{low.val = 3} \\
+        high \yld\ &5\ \cbrak{high.val = 5} \\
+                | &6\ \cbrak{high.val = 6} \\
+                | &7\ \cbrak{high.val = 7} \\
+                | &8\ \cbrak{high.val = 8}
+    \end{align*}
+\end{solution}

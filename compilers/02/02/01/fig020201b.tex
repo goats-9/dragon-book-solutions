@@ -1,0 +1,26 @@
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}
+        [level distance = 2em, level/.style={sibling distance=5em/#1}]
+        \node {$S$}
+        child {
+            node {$S$}
+            child {
+                node {$S$}
+                child {node {\texttt{a}}}
+            }
+            child {
+                node {$S$}
+                child {node{\texttt{a}}}
+            }
+            child {node{\texttt{+}}}
+        }
+        child {
+            node {$S$}
+            child {node{\texttt{a}}}
+        }
+        child {node{\texttt{*}}};
+    \end{tikzpicture}
+    \caption{Parse tree for the string \texttt{aa+a*}.}
+    \label{fig:020201b}
+\end{figure}

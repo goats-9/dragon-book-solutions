@@ -5,12 +5,12 @@
     The context free grammar is as shown.
     \begin{align*}
         num &\yld Th\ H\ T\ U \\
-        Th &\yld \textrm{M | MM | MMM} \\
+        Th &\yld \textrm{M | MM | MMM | } \epsilon \\
         H &\yld H'\ | \textrm{ D}H'\ \textrm{| CD | CM} \\
-        H' &\yld \textrm{C | CC | CCC} \\
+        H' &\yld \textrm{C | CC | CCC | } \epsilon \\
         T &\yld T'\ | \textrm{ L}T'\ \textrm{| XL | XC} \\
-        T' &\yld \textrm{X | XX | XXX} \\
+        T' &\yld \textrm{X | XX | XXX | } \epsilon \\
         U &\yld U'\ | \textrm{ V}U'\ \textrm{| IV | IX} \\
-        U' &\yld \textrm{I | II | III}
+        U' &\yld \textrm{I | II | III | } \epsilon
     \end{align*}
 \end{solution}

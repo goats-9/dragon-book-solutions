@@ -1,0 +1,14 @@
+\begin{exercise}\label{ex:020305}
+    Construct a syntax directed translation scheme to translate postfix 
+    arithmetic expressions into equivalent prefix arithmetic expressions.
+\end{exercise}
+\begin{solution}\label{sol:020305}
+    The translation scheme is given below.
+    \begin{align*}
+        E \yld\ &E_1\ E_2\ \texttt{+}\ \cbrak{E.expr = \texttt{+}\ \|\ E_1.expr\ \|\ E_2.expr} \\
+             |\ &E_1\ E_2\ \texttt{-}\ \cbrak{E.expr = \texttt{-}\ \|\ E_1.expr\ \|\ E_2.expr} \\
+             |\ &E_1\ E_2\ \texttt{*}\ \cbrak{E.expr = \texttt{*}\ \|\ E_1.expr\ \|\ E_2.expr} \\
+             |\ &E_1\ E_2\ \texttt{/}\ \cbrak{E.expr = \texttt{/}\ \|\ E_1.expr\ \|\ E_2.expr} \\
+             |\ &id\ \cbrak{E.expr = id.val}
+    \end{align*}
+\end{solution}

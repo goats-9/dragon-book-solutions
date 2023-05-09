@@ -1,0 +1,38 @@
+\begin{exercise}\label{ex:020304}
+    Construct a syntax directed translation scheme that translates roman 
+    numerals up to 2000 into integers.
+\end{exercise}
+\begin{solution}\label{sol:020304}
+    The translation scheme is shown below.
+    \begin{align*}
+        R \yld\ &Th\ H\ T\ U\ \cbrak{R.val = Th.val\ \|\ H.val \|\ T.val \|\ U.val} \\
+        Th \yld\ &\textrm{M}\ \cbrak{Th.val = 1} \\
+              |\ &\textrm{MM}\ \cbrak{Th.val = 2} \\
+              |\ &\textrm{MMM}\ \cbrak{Th.val = 3} \\
+              |\ &\epsilon\ \cbrak{Th.val = 0} \\
+        H \yld\ &H'\ \cbrak{H.val = H'.val} \\
+             |\ &\textrm{D}H'\ \cbrak{H.val = H'.val + 5} \\
+             |\ &\textrm{CD}\ \cbrak{H.val = 4} \\
+             |\ &\textrm{CM}\ \cbrak{H.val = 9} \\
+        H' \yld\ &\textrm{C}\ \cbrak{H'.val = 1} \\
+              |\ &\textrm{CC}\ \cbrak{H'.val = 2} \\
+              |\ &\textrm{CCC}\ \cbrak{H'.val = 3} \\
+              |\ &\epsilon\ \cbrak{H'.val = 0} \\
+        T \yld\ &T'\ \cbrak{T.val = T'.val} \\
+             |\ &\textrm{L}T'\ \cbrak{T.val = T'.val + 5} \\
+             |\ &\textrm{XL}\ \cbrak{T.val = 4} \\
+             |\ &\textrm{XC}\ \cbrak{T.val = 9} \\
+        T' \yld\ &\textrm{X}\ \cbrak{T'.val = 1} \\
+              |\ &\textrm{XX}\ \cbrak{T'.val = 2} \\
+              |\ &\textrm{XXX}\ \cbrak{T'.val = 3} \\
+              |\ &\epsilon\ \cbrak{T'.val = 0} \\
+        U \yld\ &U'\ \cbrak{U.val = U'.val} \\
+             |\ &\textrm{V}U'\ \cbrak{U.val = U'.val + 5} \\
+             |\ &\textrm{IV}\ \cbrak{U.val = 4} \\
+             |\ &\textrm{IX}\ \cbrak{U.val = 9} \\
+        U' \yld\ &\textrm{I}\ \cbrak{U'.val = 1} \\
+              |\ &\textrm{II}\ \cbrak{U'.val = 2} \\
+              |\ &\textrm{III}\ \cbrak{U'.val = 3} \\
+              |\ &\epsilon\ \cbrak{U'.val = 0}
+    \end{align*}
+\end{solution}

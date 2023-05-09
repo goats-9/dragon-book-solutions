@@ -1,0 +1,30 @@
+\begin{table}[!ht]
+    \centering
+    \begin{tabularx}{\columnwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{Compilers}} & \multicolumn{1}{c|}{\textbf{Interpreters}} \\
+        \hline
+        It translates a program from source language to an equivalent program 
+        in the target language.
+        &
+        It executes the instructions in the source program directly without 
+        translation. \\
+        \hline
+        Inputs are provided to the target program. 
+        & 
+        Inputs are provided directly to the source program. \\
+        \hline
+        Produces worse error diagnostics since it translates the entire source 
+        program in one step without executing it.
+        &
+        Produces better error diagnostics since it executes the source program
+        line by line. \\
+        \hline
+        Faster in mapping inputs to outputs.
+        &
+        Slower in mapping inputs to outputs. \\
+        \hline        
+    \end{tabularx}
+    \caption{Differences Between Compilers and Interpreters.}
+    \label{tab:010101}
+\end{table} 

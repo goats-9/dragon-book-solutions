@@ -1,0 +1,26 @@
+\begin{exercise}\label{ex:010604}
+    For the block-structured C code of \cref{code:010604}, indicate the values assigned to 
+    \textit{w}, \textit{x}, \textit{y}, and \textit{z}.
+    \begin{listing}[!ht]
+        \inputminted[linenos=true,frame=single]{c}{01/06/04/ex010604.c}
+        \caption{Source code for \cref{ex:010604}.}
+        \label{code:010604}
+    \end{listing}
+\end{exercise}
+\begin{solution}\label{sol:010604}
+    When \texttt{main} calls \texttt{b}, the first statement reads 
+    \texttt{x = (x+1)}, which changes the value of \texttt{x} to 3 in the 
+    \textit{global scope} as there are no declarations for \texttt{x} in the
+    local scope of \texttt{b}. Hence, the \texttt{printf} outputs \texttt{3}.
+
+    \noindent For the case of \texttt{c}, the latest definition of \texttt{x}
+    is in its local scope, hence the \texttt{printf} will output \texttt{2} on
+    substituting the macro for \texttt{a}.
+
+    \noindent The final output is shown in \cref{out:010604}.
+    \begin{listing}[!ht]
+        \inputminted[linenos=true,frame=single]{c}{01/06/04/ex010604.txt}
+        \caption{Output on running \cref{code:010604}.}
+        \label{out:010604}
+    \end{listing}
+\end{solution}

@@ -1,0 +1,19 @@
+\begin{exercise}\label{ex:020301}
+    Construct a syntax directed translation scheme that translates arithmetic 
+    expressions from infix notation into prefix notation in which an operator 
+    appears before its operands; e.g., $-xy$ is the prefix notation for $x - y$.
+    Give annotated parse trees for the inputs \texttt{9-5+2} and \texttt{9-5*2}.
+\end{exercise}
+\begin{solution}\label{sol:020301}
+    The translation scheme is given below.
+    \begin{align*}
+            E &\yld \cbrak{\text{print(`\texttt{+}')}}\ E\ \texttt{+}\ T\ |\ \cbrak{\text{print(`\texttt{-}')}}\ E\ \texttt{-}\ T\ |\ T \\
+            T &\yld \cbrak{\text{print(`\texttt{*}')}}\ T\ \texttt{*}\ F\ |\ \cbrak{\text{print(`\texttt{/}')}}\ T\ \texttt{/}\ F\ |\ F \\
+            F &\yld \cbrak{\text{print(id)}}\ id\ |\ \cbrak{\text{print(num)}}\ num\ |\ (E)
+    \end{align*}
+    The parse trees for the inputs \texttt{9-5+2} and \texttt{9-5*2} are shown 
+    in \autoref{fig:020301a} and \autoref{fig:020301b} respectively.
+    \input{02/03/01/fig020301a.tex}
+
+    \input{02/03/01/fig020301b.tex}
+\end{solution}

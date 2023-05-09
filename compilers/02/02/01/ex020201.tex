@@ -20,32 +20,8 @@
             \yld \texttt{aa+a*}
         \end{align*}
         \item The parse tree for the above string is in \autoref{fig:020201b}.
-        \begin{figure}[!ht]
-            \centering
-            \begin{tikzpicture}
-                [level distance = 2em, level/.style={sibling distance=5em/#1}]
-                \node {\textit{S}}
-                child {
-                    node {\textit{S}}
-                    child {
-                        node {\textit{S}}
-                        child {node {\texttt{a}}}
-                    }
-                    child {
-                        node {\textit{S}}
-                        child {node{\texttt{a}}}
-                    }
-                    child {node{\texttt{+}}}
-                }
-                child {
-                    node {\textit{S}}
-                    child {node{\texttt{a}}}
-                }
-                child {node{\texttt{*}}};
-            \end{tikzpicture}
-            \caption{Parse tree for the string \texttt{aa+a*}.}
-            \label{fig:020201b}
-        \end{figure}
+        \input{02/02/01/fig020201b.tex}
+
         \item We claim that the given context-free grammar generates all and only 
         postfix expressions with operand \texttt{a} and operations \texttt{+} and 
         \texttt{*}. We prove this claim by induction on the number of operations
