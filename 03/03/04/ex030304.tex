@@ -1,0 +1,18 @@
+\begin{exercise}\label{ex:030304}
+    Most languages are \emph{case sensitive}, so keywords can be written only 
+    one way, and the regular expressions describing their lexemes are very 
+    simple. However, some languages, like SQL, are \emph{case insensitive}, so 
+    a keyword can be written either in lowercase or in uppercase, or in any 
+    mixture of cases. Thus, the SQL keyword \texttt{SELECT} can also be written 
+    \texttt{select}, \texttt{Select}, or \texttt{sElEcT}, for instance. Show how 
+    to write a regular expression for a keyword in a case-insensitive language.
+    Illustrate the idea by writing the expression for ``select'' in SQL.
+\end{exercise}
+\begin{solution}\label{sol:030304}
+    For a keyword $s = s_1s_2\ldots s_n$, the required regular expression is
+    \begin{align*}
+        s' = \brak{s_1|S_1}\brak{s_2|S_2}\ldots\brak{s_n|S_n}
+    \end{align*}
+    where $S_i$ denotes the opposite case of $s_i$. For ``select'', the regular 
+    expression is \texttt{(s|S)(e|E)(l|L)(e|E)(c|C)(t|T)}.
+\end{solution}

@@ -1,0 +1,29 @@
+\begin{exercise}\label{ex:030305}
+    Write regular definitions for the following languages:
+    \begin{enumerate}[label=\alph*)]
+        \item All strings of lowercase letters that contain the ve vowels in 
+        order.
+        \item All strings of lowercase letters in which the letters are in 
+        ascending lexicographic order.
+        \item Comments, consisting of a string surrounded by \texttt{/*} and 
+        \texttt{*/}, without an intervening \texttt{*/}, unless it is inside 
+        double-quotes (\texttt{"}).
+        \item All strings of digits with no repeated digits. \emph{Hint}: Try 
+        this problem first with a few digits, such as $\cbrak{0,1,2}$.
+        \item All strings of digits with at most one repeated digit.
+        \item All strings of \texttt{a}'s and \texttt{b}'s with an even number 
+        of \texttt{a}'s and an odd number of \texttt{b}'s. 
+        \item The set of Chess moves, in the informal notation, such as
+        \texttt{{p-k4}} or \texttt{kbp}$\times$\texttt{qn}.
+        \item All strings of \texttt{a}'s and \texttt{b}'s that do not contain
+        the substring \texttt{abb}.
+        \item All strings of \texttt{a}'s and \texttt{b}'s that do not contain
+        the subsequence \texttt{abb}.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030305}
+    \begin{enumerate}[label=\alph*)]
+        \item Letting \texttt{C} denote the set of lowercase consonants, the 
+        required regular expression is \texttt{C*a\texttt[Ca]*e[Ce]*i[Ci]*o[Co]*u[Cu]*}.
+    \end{enumerate}
+\end{solution}

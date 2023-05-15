@@ -1,0 +1,22 @@
+\begin{exercise}\label{ex:030303}
+    In a string of length $n$, how many of the following are there?
+    \begin{enumerate}[label=\alph*)]
+        \item Prefixes.
+        \item Suffixes.
+        \item Proper prefixes.
+        \item Substrings.
+        \item Subsequences.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030303}
+    \begin{enumerate}[label=\alph*)]
+        \item There are $n$ prefixes, determined by the ending index.
+        \item There are $n$ suffixes, determined by the starting index.
+        \item Since the string itsef is a prefox but not a proper prefix of 
+        itself, we have $n-1$ proper prefixes.
+        \item Any two indices determine the start and end of a substring. 
+        Thus, we have $\binom{n+1}{2}$ substrings.
+        \item For each character of the string, we can choose to either include
+        or exclude it, for a total of $2^n$ subsequences.
+    \end{enumerate}
+\end{solution}

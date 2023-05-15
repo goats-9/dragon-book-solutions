@@ -1,0 +1,21 @@
+\begin{exercise}\label{ex:030302}
+    Describe the languages denoted by the following regular expressions.
+    \begin{enumerate}[label=\alph*)]
+        \item \texttt{a(a|b)*a}.
+        \item \texttt{(($\epsilon$|a)b*)*}.
+        \item \texttt{(a|b)*a(a|b)(a|b)}.
+        \item \texttt{a*ba*ba*ba*}.
+        \item \texttt{(aa|bb)*((ab|ba)(aa|bb)*(ab|ba)(aa|bb)*)*}.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030302}
+    \begin{enumerate}[label=\alph*)]
+        \item Strings that begin and end with \texttt{a}.
+        \item \texttt{(a|b)*}.
+        \item Strings whose third to last character is \texttt{a}.
+        \item Strings that contain exactly three occurrences of 
+        \texttt{b}.
+        \item Strings that have an even difference in the occurrences of 
+        \texttt{a} and \texttt{b}.
+    \end{enumerate}
+\end{solution}
