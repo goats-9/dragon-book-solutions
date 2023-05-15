@@ -30,6 +30,11 @@
 \usepackage{tikz}
 \usetikzlibrary{trees}
 \usepackage[capitalize,nameinlink,noabbrev]{cleveref}
+\setminted[]{
+   linenos=true, 
+   frame=single, 
+   breaklines=true,
+}
 \counterwithin{listing}{chapter}
 \counterwithin{table}{chapter}
 \counterwithin{exercise}{section}
@@ -134,6 +139,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\listoflistings
 
 \mainmatter
 
@@ -181,5 +187,6 @@
 %%%%%%%%%%%%%%%%
 \input{01/ch01.tex}
 \input{02/ch02.tex}
+\input{03/ch03.tex}
 
 \end{document}
