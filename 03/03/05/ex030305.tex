@@ -1,7 +1,7 @@
 \begin{exercise}\label{ex:030305}
     Write regular definitions for the following languages:
     \begin{enumerate}[label=\alph*)]
-        \item All strings of lowercase letters that contain the ve vowels in 
+        \item All strings of lowercase letters that contain the five vowels in 
         order.
         \item All strings of lowercase letters in which the letters are in 
         ascending lexicographic order.
@@ -23,7 +23,64 @@
 \end{exercise}
 \begin{solution}\label{sol:030305}
     \begin{enumerate}[label=\alph*)]
-        \item Letting \texttt{C} denote the set of lowercase consonants, the 
-        required regular expression is \texttt{C*a\texttt[Ca]*e[Ce]*i[Ci]*o[Co]*u[Cu]*}.
+        \item The regular expression is \texttt{C*a[Ca]*e[Ce]*i[Ci]*o[Co]*u[Cu]*}.
+        \texttt{C} is the shorthand for all consonants \texttt{[\^{}aeiou]}.
+        \item The regular expression is \texttt{a*b*\dots z*}.
+        \item The regular expression is \texttt{\textbackslash/\textbackslash*%
+        (\textbackslash".*\textbackslash"|%
+        [\^{}\textbackslash*\textbackslash"]*|%
+        \textbackslash*[\^{}\textbackslash/]*)*%
+        \textbackslash*\textbackslash/}.
+        \item We describe the regular definition by describing an appropriate NFA
+        $N\brak{Q, \Sigma, \delta, q_s, F}$.
+        \begin{enumerate}[label=\roman*)]
+            \item $Q = \cbrak{q_s, q_0, \ldots, q_9}$, where each state except $q_s$ 
+            represents the last scanned digit.
+            \item $\Sigma = \{\texttt{0-9}\}$.
+            \item $\delta$ is given by
+            \begin{align*}
+                \delta\brak{q, i} = 
+                \begin{cases}
+                    \cbrak{q_i} & q = q_s,\ i \in \Sigma \\
+                    \cbrak{q_i} & q = q_j,\ j \in \Sigma,\ i \neq j
+                \end{cases}
+            \end{align*}
+            \item $q_s$ is the start state.
+            \item $F = Q \setminus \cbrak{q_s}$ are the accepting states.
+        \end{enumerate}
+        \item Similar to the above expression, we describe the regular definition 
+        by describing an appropriate NFA $N\brak{Q, \Sigma, \delta, q_s, F}$.
+        \begin{enumerate}[label=\roman*)]
+            \item $Q = \cbrak{q_s, q_0, q_0', \ldots, q_9, q_9'}$, where each state 
+            except $q_s$ represents the last scanned digit. Additionally, the states
+            marked with a \texttt{'} denote that there has been a repeated digit.
+            \item $\Sigma = \{\texttt{0-9}\}$.
+            \item $\delta$ is given by
+            \begin{align*}
+                \delta\brak{q, i} = 
+                \begin{cases}
+                    \cbrak{q_i} & q = q_s,\ i \in \Sigma \\
+                    \cbrak{q_i'} & q = q_i,\ i \in \Sigma \\
+                    \cbrak{q_i} & q = q_j,\ j \in \Sigma,\ i \neq j \\
+                    \cbrak{q_i'} & q = q_j',\ j \in \Sigma,\ i \neq j
+                \end{cases}
+            \end{align*}
+            \item $q_s$ is the start state.
+            \item $F = Q \setminus \cbrak{q_s}$ are the accepting states.
+        \end{enumerate}
+        \item We describe a DFA $M(Q, \Sigma, \delta, q_0, F)$ that recognizes 
+        the required language.
+        \begin{enumerate}[label=\roman*)]
+            \item $Q = \cbrak{q_{ij}\ |\ 0 \le i, j \le 1}$. Here, the first 
+            index represents the parity of \texttt{a} and the second index 
+            represents the parity of \texttt{b} in the string.
+            \item $\Sigma = \cbrak{\texttt{a-b}}$.
+            \item $\delta$ is given in \autoref{tab:030305f}.
+            \input{03/03/05/tab030305f.tex}
+            \item $q_0 = q_{00}$.
+            \item $F = \cbrak{q_{01}}$.
+        \end{enumerate}
+        \item 
+        \item 
     \end{enumerate}
 \end{solution}
