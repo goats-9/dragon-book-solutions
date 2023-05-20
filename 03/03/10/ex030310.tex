@@ -1,0 +1,22 @@
+\begin{exercise}\label{ex:030310}
+    The operator \texttt{\^{}} matches the left end of a line, and \texttt{\$} 
+    matches the right end of a line. The operator \texttt{\^{}} is also used to 
+    introduce complemented character classes, but the context always makes it 
+    clear which meaning is intended. For example, \texttt{\^{}[\^{}aeiou]*\$} 
+    matches any complete line that does not contain a lowercase vowel.
+    \begin{enumerate}[label=\alph*)]
+        \item How do you tell which meaning of \^{} is intended?
+        \item Can you always replace a regular expression using the \^{} and \$ 
+        operators by an equivalent expression that does not use either of these 
+        operators?
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030310}
+    \begin{enumerate}[label=\alph*)]
+        \item We can distinguish the two meanings by checking whether the caret 
+        is present inside a character class right after the opening square bracket.
+        If so, then the caret denotes negation, otherwise it denotes the start of a 
+        line.
+        \item 
+    \end{enumerate}
+\end{solution}

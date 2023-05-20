@@ -45,7 +45,7 @@
                     \cbrak{q_i} & q = q_j,\ j \in \Sigma,\ i \neq j
                 \end{cases}
             \end{align*}
-            \item $q_s$ is the start state.
+            \item $q_0 = q_s$.
             \item $F = Q \setminus \cbrak{q_s}$ are the accepting states.
         \end{enumerate}
         \item Similar to the above expression, we describe the regular definition 
@@ -65,7 +65,7 @@
                     \cbrak{q_i'} & q = q_j',\ j \in \Sigma,\ i \neq j
                 \end{cases}
             \end{align*}
-            \item $q_s$ is the start state.
+            \item $q_0 = q_s$.
             \item $F = Q \setminus \cbrak{q_s}$ are the accepting states.
         \end{enumerate}
         \item We describe a DFA $M(Q, \Sigma, \delta, q_0, F)$ that recognizes 
@@ -81,6 +81,7 @@
             \item $F = \cbrak{q_{01}}$.
         \end{enumerate}
         \item 
-        \item 
+        \item The regular expression is \texttt{b*(a+b?)*}.
+        \item The regular expression is \texttt{b*a*b?a*}.
     \end{enumerate}
 \end{solution}

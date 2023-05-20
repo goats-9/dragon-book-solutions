@@ -1,0 +1,18 @@
+\begin{exercise}\label{ex:030308}
+    In \texttt{Lex}, a \emph{complemented character} class represents any 
+    character except the ones listed in the character class. We denote a 
+    complemented class by using \texttt{\^{}} as the first character; this 
+    symbol (caret) is not itself part of the class being complemented, unless 
+    it is listed within the class itself. Thus, \texttt{[\^{}A-Za-z]} matches 
+    any character that is not an uppercase or lowercase letter, and 
+    \texttt{[\^{}\textbackslash\^{}]} represents any character but the caret 
+    (or newline, since newline cannot be in any character class). Show that for 
+    every regular expression with complemented character classes, there is an 
+    equivalent regular expression without complemented character classes.
+\end{exercise}
+\begin{solution}\label{sol:030308}
+    We can simply substitute the complemented character classes with character
+    classes that contain all but the complemented characters. Since the character
+    class of a language is finite, we can always do this, and not change the 
+    meaning of the regular expression.
+\end{solution}

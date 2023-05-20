@@ -1,0 +1,17 @@
+\begin{table}[!ht]
+    \centering
+    \begin{tabularx}{\textwidth}{X|X|X|X}
+        \hline
+        \hline
+        \textsc{Expression} & \textsc{Matches} & \textsc{Example} & \textsc{Regular Expression} \\
+        \hline
+        `$s$' & string $s$ literally & \texttt{`\textbackslash'} & $(s)$ \\
+        `\textbackslash$c$' & character $c$ literally & \texttt{\textbackslash'} & $(c)$ \\
+        * & any string & \texttt{*.o} & \texttt{(a|b|\dots)*.o} \\
+        ? & any character & \texttt{sort1.?} & \texttt{sort1.a| sort1.b|\dots} \\
+        $\sbrak{s}$ & any character in $s$ & \texttt{sort1.[cso]} & \texttt{sort1.c| sort1.s| sort1.o} \\
+        \hline
+    \end{tabularx}
+    \caption{Filename expressions used by the shell command \texttt{sh}.}
+    \label{tab:030311}
+\end{table}

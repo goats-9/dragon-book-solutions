@@ -1,0 +1,15 @@
+\begin{exercise}\label{ex:030312}
+    SQL allows a rudimentary form of patterns in which two characters have 
+    special meaning: underscore (\texttt{\textunderscore}) stands for any one 
+    character and percent-sign (\texttt{\%}) stands for any string of 0 or more 
+    characters. In addition, the programmer may define any character, say $e$, 
+    to be the escape character, so an $e$ preceding , \texttt{\textunderscore}, 
+    \texttt{\%}, or another $e$ gives the character that follows its literal 
+    meaning. Show how to express any SQL pattern as a regular expression, given 
+    that we know which character is the escape character.
+\end{exercise}
+\begin{solution}\label{sol:030312}
+    Using \texttt{Lex} regular expression, we have the following equivalent 
+    regular expressions in \autoref{tab:030312}.
+    \input{03/03/12/tab030312.tex}
+\end{solution}

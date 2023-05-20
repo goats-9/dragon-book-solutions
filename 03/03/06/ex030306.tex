@@ -1,0 +1,19 @@
+\begin{exercise}\label{ex:030306}
+    Write character classes for the following sets of characters:
+    \begin{enumerate}[label=\alph*)]
+        \item The first ten letters (up to ``j") in either upper or lower case.
+        \item The lowercase consonants.
+        \item The ``digits" in a hexadecimal number (choose either upper or 
+        lower case for the ``digits" above 9).
+        \item The characters that can appear at the end of a legitimate English 
+        sentence (e.g., exclamation point).
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030306}
+    \begin{enumerate}[label=\alph*)]
+        \item The character class is \texttt{[a-jA-J]}.
+        \item The character class is \texttt{[a-z]}.
+        \item The character class is \texttt{[0-9a-fA-F]}.
+        \item The character class is \texttt{[\textbackslash.?!]}.
+    \end{enumerate}
+\end{solution}

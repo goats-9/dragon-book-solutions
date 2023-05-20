@@ -1,0 +1,18 @@
+\begin{exercise}\label{ex:030307}
+    Note that these regular expressions give all of the following symbols 
+    (\emph{operator characters}) a special meaning:
+    
+    \texttt{\textbackslash\ " . \^{} \$ [ ] * + ? \{ \} | /}
+    
+    \noindent Their special meaning must be turned off if they are needed to represent 
+    themselves in a character string. We can do so by quoting the character 
+    within a string of length one or more; e.g., the regular expression 
+    \texttt{"**"} matches the string \texttt{**}. We can also get the literal 
+    meaning of an operator character by preceding it by a backslash. Thus, the 
+    regular expression \texttt{\textbackslash*\textbackslash*} also matches the 
+    string \texttt{**}. Write a regular expression that matches the string 
+    \texttt{"\textbackslash}.
+\end{exercise}
+\begin{solution}\label{sol:030307}
+    The required regular expression is \texttt{\textbackslash"\textbackslash\textbackslash}.
+\end{solution}

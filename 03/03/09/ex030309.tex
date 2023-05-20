@@ -1,0 +1,14 @@
+\begin{exercise}\label{ex:030309}
+    The regular expression $r\cbrak{m,n}$ matches from $m$ to $n$ occurrences 
+    of the pattern $r$. For example, \texttt{a\{1,5\}} matches a string of one 
+    to five $a$`s. Show that for every regular expression containing repetition 
+    operators of this form, there is an equivalent regular expression without 
+    repetition operators.
+\end{exercise}
+\begin{solution}\label{sol:030309}
+    We use the zero or one operator (\texttt{?}) to construct the equivalent 
+    regular expression
+    \begin{align*}
+        r\cbrak{m,n} \equiv \underbrace{rr\ldots r}_{m\textrm{ times}}\underbrace{r?r?\ldots r?}_{n-m\textrm{ times}}
+    \end{align*}
+\end{solution}
