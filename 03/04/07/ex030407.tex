@@ -1,0 +1,32 @@
+\begin{exercise}\label{ex:030407}
+    Show that the algorithm in \cref{code:030407} correctly tells whether the
+    keyword is a substring of the given string. \emph{Hint}: proceed by
+    induction on $i$. Show that for all $i$, the value of $s$ after line 4 is
+    the length of the longest prefix of the keyword that is a suffix of
+    $a_1a_2\ldots a_i$.
+
+    \begin{listing}[!ht]
+        \inputminted{c}{03/04/07/ex030407.c}
+        \caption{The KMP Algorithm.}
+        \label{code:030407}
+    \end{listing}
+\end{exercise}
+\begin{solution}\label{sol:030407} 
+    We claim that for all $i$, the value of $s$ after line 4 is the length of
+    the longest prefix of the keyword that is a suffix of $a_1a_2\ldots a_i$. We
+    prove this claim by induction on $i$.
+    
+    \noindent For $i = 1$, we must have $s = 1$ if $b_1 = a_1$ and $s = 0$
+    otherwise, which proves the base case. Suppose the claim holds upto some
+    $i$. Then, for $i + 1$, we need to find the maximal $s$ such that $a_{i-s+k}
+    = b_k,\ 1 \le k \le s+1$. The \texttt{while} loop in line 3 reduces
+    \texttt{s} to this maximal value. If no such value of $s$ is found, then we
+    must have $s = 0$. In either case, the induction hypothesis holds, and the
+    claim is proved.
+
+    \noindent At each iteration of the \texttt{for} loop, we check whether $s =
+    n$. This implies that keyword $b$ is a suffix of $a_1a_2\ldots a_i$ for some
+    $i$. Therefore, we have found a match. If this situation does not occur,
+    control exits the \texttt{for} loop and there is no match. This proves the
+    correctness of the KMP algorithm.
+\end{solution}

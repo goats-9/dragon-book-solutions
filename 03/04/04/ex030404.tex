@@ -1,0 +1,35 @@
+\begin{exercise}\label{ex:030404}
+    Prove, by induction on $s$, that the algorithm of \cref{code:030404} 
+    correctly computes the failure function.
+    \begin{listing}[!ht]
+        \centering
+        \inputminted{c}{03/04/04/ex030404.c}
+        \caption{Algorithm to compute the failure function for keyword 
+        $b_1b_2\ldots b_n$.}
+        \label{code:030404}
+    \end{listing}
+\end{exercise}
+\begin{solution}\label{sol:030404} 
+    
+    We prove the following loop invariant: \emph{At the end of the
+    $s$\textsuperscript{th} iteration, $t = f(s+1)$ and the values of $f(k),\ 1
+    \le k \le s + 1$}. are computed correctly.
+
+    \noindent Putting $s = 0$, we see from lines 1 and 2 of \cref{code:030404}
+    that the base case is trivial. Suppose the loop invariant holds upto the $(s
+    - 1)$\textsuperscript{th} iteration ($s > 0$). Then, $t$ contains the value
+    of $f(s)$ at the start of the $s$\textsuperscript{th} iteration.
+
+    \noindent We claim that the \texttt{while} loop of line 4 computes the
+    maximal length $t$ of the prefix of $b_1b_2\ldots b_s$ that is also a suffix
+    of this substring such that $b_{t+1} = b_{s+1}$ or returns $t = 0$. Since $t
+    = f(s)$ at the start, in any iteration of the \texttt{while} loop, we have a
+    prefix of length $t$ that is also a suffix of $b_1b_2\ldots b_s$. Note that
+    this loop decreases the value of $t$. If at any point, we find a suitable
+    $t$ such that $b_{t+1} = b_{s+1}$, it must be maximal, and hence $t =
+    f(s+1)$ is computed properly. If no such $t$ is found, clearly $t = f(s+1) =
+    0$.  
+
+    \noindent Putting $s = n-1$ in the loop invariant, we see that the algorithm
+    is correct.
+\end{solution}

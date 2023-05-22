@@ -1,0 +1,13 @@
+\begin{exercise}\label{ex:030405}
+    Show that the assignment $t = f(t)$ in line 4 of \cref{code:030404} is
+    executed at most $n$ times. Show that therefore, the entire algorithm takes
+    only $O(n)$ time on a keyword of length $n$.
+\end{exercise}
+\begin{solution}\label{sol:030405}
+    Observe that the \texttt{if\dots{}else} statement following the
+    \texttt{while} loop is executed $O(n)$ times. Each execution may increase
+    the value of $t$ by $O(n)$. On the other hand, each execution of the
+    \texttt{while} loop decreases the value of $t$. Since $t \ge 0$, we must
+    have that the \texttt{while} loop was executed $O(n)$ times, for a total
+    complexity of $O(n)$.
+\end{solution}

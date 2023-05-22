@@ -1,0 +1,21 @@
+\begin{exercise}\label{ex:030409}
+    The \emph{Fibonacci} strings are defined as follows:
+    \begin{enumerate}
+        \item $s_1 = \texttt{b}$.
+        \item $s_2 = \texttt{a}$.
+        \item $s_k = s_{k-1}s_{k-2}$ for $k > 2$.
+    \end{enumerate}
+    For example, $s_3 = \texttt{ab}, s4 = \texttt{aba}$, and $s5 =
+    \texttt{abaab}$.
+    \begin{enumerate}[label=\alph*)]
+        \item What is the length of $s_n$?
+        \item Construct the failure function for $s_6$.
+        \item Construct the failure function for $s_7$.
+        \item Show that the failure function for any $s_n$ can be expressed by 
+        $f(1) = f(2) = 0$, and for $2 < j \le |s_n|,\ f(j)$ is $j - |s_{k-1}|$,
+        where $k$ is the largest integer such that $|s_k| \le j + 1$.
+        \item In the KMP algorithm, what is the largest number of consecutive 
+        applications of the failure function, when we try to determine whether 
+        keyword $s_k$ appears in text string $s_{k+1}$?
+    \end{enumerate}
+\end{exercise}

@@ -1,0 +1,12 @@
+\begin{exercise}\label{ex:030408}
+    Show that the algorithm of \cref{code:030407} runs in time $O(m + n)$,
+    assuming that function $f$ is already computed and its values stored in an
+    array indexed by $s$.
+\end{exercise}
+\begin{solution}\label{sol:030408}
+    Notice that $s$ can increase $O(n)$ times, since the algorithm will
+    terminate if $s = n$. Thus, the \texttt{while} loop in line 3 can decrease
+    it only $O(n)$ times, hence it executes $O(n)$ times in total. Since there
+    are $O(m)$ iterations of lines 4 and 5, it follows that the total runtime is
+    $O(m+n)$, as required.
+\end{solution}

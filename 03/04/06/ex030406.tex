@@ -1,0 +1,20 @@
+\begin{exercise}\label{ex:030406}
+    Apply Algorithm KMP to test whether keyword \texttt{ababaa} is a substring
+    of
+    \begin{enumerate}[label=\alph*)]
+        \item \texttt{abababaab}.
+        \item \texttt{abababbaa}.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}\label{sol:030406}
+    We compute the failure function for \texttt{ababaa} in \autoref{tab:030406}.
+    \input{03/04/06/tab030406.tex}
+    \begin{enumerate}[label=\alph*)]
+        \item We see in \autoref{tab:030406a} that $s = 6$ when $m = 8$, hence the keyword is a
+        substring.
+        \input{03/04/06/tab030406a.tex}
+        \item We see in \autoref{tab:030406b} that $s$ is never equal to 6, hence the keyword is not a
+        substring.
+        \input{03/04/06/tab030406b.tex}
+    \end{enumerate}
+\end{solution}
